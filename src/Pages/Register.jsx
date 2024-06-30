@@ -119,7 +119,7 @@ const Register = () => {
         </Select>
       </Form.Item>
 
-      {/* <Form.Item
+      <Form.Item
         name="password"
         label="Password"
         rules={[
@@ -137,7 +137,7 @@ const Register = () => {
           type="tel"
           
         />
-      </Form.Item> */}
+      </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
