@@ -35,15 +35,10 @@ export default class Navbar extends Component {
             </button>
           </div>
           {/* navbar link */}
-          <ul
-            className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
-          >
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/rooms">Rooms</Link>
-            </li>
+          <ul className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/rooms">Rooms</Link></li>
+            <li><Link to="/login">Login</Link></li>
           </ul>
         </div>
       </nav>
