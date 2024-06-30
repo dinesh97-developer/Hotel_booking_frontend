@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/rooms/" element = {<Room />} />
         <Route path="/rooms/:slug" element = {<SingleRoomWrapper />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/login/:reg" element={<Register />} />
+        <Route path="/login/reg" element={<Register />} />
         <Route element = {<Error />} />
       </Routes>
       <Footer />

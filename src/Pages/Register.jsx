@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form, Input, DatePicker,Select } from "antd";
 
 
-import { UserOutlined, MailOutlined, PhoneOutlined, LockOutlined } from "@ant-design/icons";
+import { UserOutlined, MailOutlined, PhoneOutlined, LockOutlined, EyeTwoTone, EyeInvisibleOutlined } from "@ant-design/icons";
 
 const Register = () => {
   const onFinish = (values) => {
@@ -119,7 +119,7 @@ const Register = () => {
         </Select>
       </Form.Item>
 
-      <Form.Item
+      {/* <Form.Item
         name="password"
         label="Password"
         rules={[
@@ -130,13 +130,14 @@ const Register = () => {
         ]}
       >
         <Input.Password
-          prefix={<LockOutlined className="site-form-item-icon" />}
+          iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           placeholder="Password"
           size="large"
           allowClear
           type="tel"
+          
         />
-      </Form.Item>
+      </Form.Item> */}
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
@@ -152,7 +153,7 @@ const Register = () => {
               fontWeight:"bold",
               textDecoration: "none"
             }}> 
-            Login Here 😇!!!</a>
+             Login Here 😇!!!</a>
         </p>
         </div>
       </Form.Item>

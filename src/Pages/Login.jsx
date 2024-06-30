@@ -47,7 +47,7 @@ function App() {
             <button className="btn btn-primary mb-0 px-5" size='lg'>Login</button>
             <p className="small fw-bold mt-2 pt-1 mb-2" style={{color:"black"}}>Don't have an account?
             
-               <a href='/login/:reg' className="link-danger">Register</a>
+               <a href='/login/reg' className="link-danger">Register</a>
             </p>
           </div>
 
