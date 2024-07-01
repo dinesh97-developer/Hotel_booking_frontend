@@ -10,6 +10,7 @@ import Navbar from "./Components/Navbar/Navbar"
 import Footer from "./Components/Footer/Footer"
 import Login from "./Pages/Login"
 import Register from "./Pages/Register"
+import ForgotPassword from "./Pages/Forget"
 
 export default function App() {
   return(
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/rooms/:slug" element = {<SingleRoomWrapper />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/reg" element={<Register />} />
+        <Route path="/Forgot-password" element ={<ForgotPassword/>}/>
         <Route element = {<Error />} />
       </Routes>
       <Footer />

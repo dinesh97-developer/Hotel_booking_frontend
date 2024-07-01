@@ -17,7 +17,7 @@ const Register = () => {
 
   return (
     <Form
-      style={{ width: "75%" }}
+    style={{ maxWidth: '700px', margin: '0 auto', padding: '20px' }}
       name="register"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 16 }}
