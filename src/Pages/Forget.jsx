@@ -37,6 +37,18 @@ const ForgotPassword = () => {
             <Button type="primary" htmlType="submit" loading={loading} block>
               Submit
             </Button>
+            <br />
+            <br />
+            <a href="/login" 
+          style={
+            {
+              fontWeight:"bold",
+              textDecoration: "none",
+              fontSize:"20px",
+              padding :"100px"
+              
+            }}> 
+             Login Here 🛴!!!</a>
           </Form.Item>
         </Form>
       </div>
