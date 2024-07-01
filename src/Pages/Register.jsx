@@ -1,12 +1,35 @@
 import React from "react";
-import { Button, Form, Input, DatePicker,Select } from "antd";
+import { Button, Form, Input, DatePicker,Select, notification } from "antd";
 
 
 import { UserOutlined, MailOutlined, PhoneOutlined, LockOutlined, EyeTwoTone, EyeInvisibleOutlined } from "@ant-design/icons";
 
 const Register = () => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  const onFinish = async(values) => {
+    try{
+      const response =  await axios.post("/api/v1/auth/registration",{
+        userName: values.username,
+        fullName: values.fullname,
+        email: values.email,
+        phone: values.phone,
+        dob: values.dob.format('YYYY-MM-DD'), // Assuming you want to format the date before sending
+        gender: values.gender,
+        password: values.password,
+      })
+      console.log("Success:", response.data);
+      notification.success({
+        message : "Success",
+        description :  response.data.messag
+      })
+    }catch(error){
+      console.log("Failed: ", error);
+
+      notification.error({
+        message: 'Error',
+        description: error.response?.data?.message || 'Something went wrong!',
+      });
+
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -37,6 +60,7 @@ const Register = () => {
           placeholder="User Name"
           size="large"
           allowClear
+          autoComplete ="username"
         />
       </Form.Item>
 
@@ -50,6 +74,7 @@ const Register = () => {
           placeholder="Full Name"
           size="large"
           allowClear
+          autoComplete="fullname"
         />
       </Form.Item>
 
@@ -63,6 +88,7 @@ const Register = () => {
           placeholder="Email"
           size="large"
           allowClear
+          autoComplete="email"
         />
       </Form.Item>
 
@@ -82,6 +108,7 @@ const Register = () => {
           size="large"
           allowClear
           type="tel"
+          autoComplete="phone"
         />
       </Form.Item>
 
@@ -135,6 +162,7 @@ const Register = () => {
           size="large"
           allowClear
           type="tel"
+          autoComplete="current-password"
           
         />
       </Form.Item>
@@ -146,7 +174,7 @@ const Register = () => {
         <br />
         <div>
         <p style={{color:"red", fontWeight:"bold"}}>
-          You have account please 
+          You have an account please 
           <a href="/login" 
           style={
             {
